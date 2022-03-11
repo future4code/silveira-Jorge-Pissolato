@@ -1,0 +1,23 @@
+
+
+h1{
+    color: rgb(235, 230, 230);
+    background-color: rgb(90, 95, 99);
+    font-style:oblique ;
+}
+
+h3{
+  background-color: rgb(107, 231, 118);  
+}
+
+
+img{
+   width: 100%;
+    
+}
+
+div > p{
+    background-color:rgb(172, 172, 172);
+}
+
+
