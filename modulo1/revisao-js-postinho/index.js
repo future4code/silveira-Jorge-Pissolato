@@ -43,17 +43,37 @@ console.log(verificaSeEMaior(321, 2156));
 
 const cadastro = () => {
     const usuario = []
+    // const nome = prompt("qual seu nome?")
+    // const ano = prompt("em que ano você nasceu ?")
+    // const senha = prompt("digite a sua senha")
+    // const pais = prompt("Em que país você nasceu ?")
 
-    //  Sua lógica aqui
-
-}
+    // if (ano <= 2004 && pais === 'brasil' && 6 <= senha.length){
+    //   usuario.push(nome)
+    //   usuario.push(ano)
+    //   usuario.push(senha)
+    //   usuario.push(pais)
+    //     return "obrigado pelas informações"
+    // }else{
+    // return "cadastro inválido"
+    // }
+}   
+    
+    
 console.log(cadastro());
 
 // Exercício 4-----------------------------------------------------------------------------------------------
 
 const login = () => {
     const login = "labenu"
-    //  Sua lógica aqui
+    // const pergunta = prompt("Digite aqui uma senha:")
+   
+    // if(pergunta === login){
+    //     console.log("Usuário Logado")
+    
+    // } else{
+    //     console.log("Senha inválida")
+    // }
 
 }
 
@@ -62,10 +82,24 @@ console.log(login());
 // Exercício 5----------------------------------------------------------------------------------------------------
 
 const primeiraDose = () => {
+//     const nome = prompt('Qual seu nome ?')
+//     const vacina = prompt('Qual vacina você tomou?')
+//     let tempo = "" 
+//     let data = ""
+//     const coronavac = 28
+//     const astrazenica = 90
+//     const pfizer = 90
 
-    //  Sua lógica aqui
-
-
+// if(vacina === 'coronavac'){
+//         return `Olá ${nome}! A próxima dose da ${vacina} é daqui a ${coronavac} dias. Compareça no posto na data 12/04/2022.`
+// } 
+// if(vacina === 'astrazenica'){
+//     return `Olá ${nome}! A próxima dose da ${vacina} é daqui a ${astrazenica} dias. Compareça no posto na data 13/06/2022.`
+// } 
+// if (vacina === 'pfizer'){
+//     return `Olá ${nome}! A próxima dose da ${vacina} é daqui a ${pfizer} dias. Compareça no posto na data 13/06/2022.`
+// }
+    
 }
 console.log(primeiraDose())
 
@@ -81,9 +115,12 @@ const segundaDose = (nomeDoUsuario) => {
         { nome: "Carlos", imunizacao: "incompleta" }
     ]
 
-    //  Sua lógica aqui
-
-
+    // for(let pessoa of usuarios){
+    //     if(pessoa.nome === nomeDoUsuario){
+    //         pessoa.imunizacao = "completa"
+    //     }
+    // }
+    // return usuarios
 }
 console.log(segundaDose("Barbara"));
 
@@ -96,7 +133,11 @@ const avisoAosAtrasados = () => {
         { nome: "Carlos", imunizacao: "incompleta" }
     ]
 
-    //  Sua lógica aqui
+    for(let pessoa of usuarios){
+        if(pessoa.imunizacao === "incompleta"){
+          
+        }
+    }
 
 }
 console.log(avisoAosAtrasados());
