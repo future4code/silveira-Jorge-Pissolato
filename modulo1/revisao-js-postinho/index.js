@@ -132,13 +132,11 @@ const avisoAosAtrasados = () => {
         { nome: "Barbara", imunizacao: "completa" },
         { nome: "Carlos", imunizacao: "incompleta" }
     ]
-
     for(let pessoa of usuarios){
         if(pessoa.imunizacao === "incompleta"){
-          
+            console.log(`Olá ${pessoa.nome}! Sua imunização está ${pessoa.imunizacao}, por favor volte ao postinho para tomar a segunda dose.`)
         }
     }
-
 }
 console.log(avisoAosAtrasados());
 
