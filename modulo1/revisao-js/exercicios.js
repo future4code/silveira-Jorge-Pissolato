@@ -5,38 +5,27 @@
 
 // EXERCÍCIO 01
 function retornaTamanhoArray(array) {
-   return array.length;
-}
-const array = [5,9,11]
- const tamanho = retornaTamanhoArray(array)
+
 
 // EXERCÍCIO 02
 function retornaArrayInvertido(array) {
   return array.reverse()
+
 }
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-    const arrayOrdenado = array.sort((a, b) => a - b);
-  return arrayOrdenado
+
 }
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-  return array.filter((item) =>{
-      return item % 2 == 0;
-  })
+
 }
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
- const a = array.filter((item) =>{
-     return item % 2 == 0;
- })
-const b = a.map((item) =>
-return item * item 
 
-})
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
