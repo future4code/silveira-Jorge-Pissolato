@@ -5,33 +5,23 @@
 
 // EXERCÍCIO 01
 function retornaTamanhoArray(array) {
-  return array.length
 
-}
-
-// EXERCÍCIO 02
-function retornaArrayInvertido(array) {
- return array.reverse()
 }
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-    return array.sort((a, b) => a - b)
+
 }
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-const apenasPares = array.filter() =>{
-    return 
-    
-}
+
 
 }
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
- 
-}
+
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
