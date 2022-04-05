@@ -6,11 +6,6 @@
 // EXERCÍCIO 01
 function retornaTamanhoArray(array) {
 
-
-// EXERCÍCIO 02
-function retornaArrayInvertido(array) {
-  return array.reverse()
-
 }
 
 // EXERCÍCIO 03
@@ -20,6 +15,7 @@ function retornaArrayOrdenado(array) {
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
+
 
 }
 
