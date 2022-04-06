@@ -1,27 +1,43 @@
 
-import './App.css';
-import axios from 'axios'
+import React from 'react';
+import axios from 'axios';
+import CadastroUsuarios from './components/CadastroUsuarios';
+import ListaDeUsuarios from './components/ListaDeUsuarios';
 
-const getAllPlaylists = () => {
-  axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users', {
-    headers: {
-      Authorization: "Jorge-Pissolato-SS"
+
+export default class App extends React.Component {
+
+  state = {
+    telaAtual: "cadastro",
+
+  }
+
+  escolherTela = () => {
+    switch (this.state.telaAtual) {
+      case "cadastro":
+        return <CadastroUsuarios mudaParaLista={this.mudaParaLista} />;
+      case "lista":
+        return <ListaDeUsuarios mudaParaCadastro={this.mudaParaCadastro} />;
+      default:
+        return <div>Página não encontrada</div>;
     }
-  })
-};
+  }
+  mudaParaCadastro = () => {
+    this.setState({ telaAtual: "cadastro" })
+  }
 
-function App() {
-  return (
-    <div>
+  mudaParaLista = () => {
+    this.setState({ telaAtual: "lista" })
+  }
+
+
+  render() {
+    return (
       <div>
-        <button>Lista de Usuários</button>
+        {this.escolherTela()}
       </div>
-
-      <input placeholder='nome' />
-      <input placeholder='E-mail' />
-      <button>Enviar</button>
-    </div>
-  );
+    )
+  }
 }
 
-export default App;
+
