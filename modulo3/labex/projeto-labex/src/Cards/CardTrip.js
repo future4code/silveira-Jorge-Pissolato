@@ -13,10 +13,13 @@ align-items: center;
 
 `
 
-function CardTrip() {
+function CardTrip(props) {
     return (
         <div>
-            <StyledCardTrip>CardTrip</StyledCardTrip>
+            <StyledCardTrip>
+                <p>{props.trip.name}</p>
+                <p>{props.trip.description}</p>
+            </StyledCardTrip>
         </div>
 
     )

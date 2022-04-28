@@ -8,7 +8,29 @@ import axios from "axios";
 
 function ListTripsPage() {
 
+    const [trips, setTrips]= useState([])
+
     const navigate = useNavigate()
+
+    const getTrips = () =>{
+        axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/jorge-pissolato-silveira/trips`)
+        .then((response)=>{
+            setTrips(response.data.trips)
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+    }
+
+    useEffect(()=>{
+        getTrips()
+    },[])
+
+        const listTrips = trips && trips.map((trip)=>{
+            return(
+                <CardTrip key={trip.id} trip={trip}></CardTrip>
+            )
+        })
 
 
     return (
@@ -17,10 +39,7 @@ function ListTripsPage() {
             <button onClick={() => backToHomePage(navigate)}>Voltar</button>
             <button onClick={() => goToApplicationFormPage(navigate)}>Inscrição</button>
             <ul>
-                <CardTrip />
-                <CardTrip />
-                <CardTrip />
-                <CardTrip />
+                {listTrips}
             </ul>
         </GlobalStyle>
     )
