@@ -34,14 +34,14 @@ function ListTripsPage() {
 
 
     return (
-        <GlobalStyle>
+        <div>
             <h1>PÁGINA DE LISTA DE VIAGENS</h1>
             <button onClick={() => backToHomePage(navigate)}>Voltar</button>
             <button onClick={() => goToApplicationFormPage(navigate)}>Inscrição</button>
             <ul>
                 {listTrips}
             </ul>
-        </GlobalStyle>
+        </div>
     )
 }
 
