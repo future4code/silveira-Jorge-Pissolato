@@ -1,12 +1,18 @@
 import React from "react";
+import { ThemeProvider } from '@material-ui/core/styles';
+import theme from "./Constants/Temas";
+import Router from "./Routes/Router";
 
 
 function App() {
   return (
-    <div className="App">
-      olá mundo
-    </div>
+    <ThemeProvider theme={theme}>
+      <Router />
+    </ThemeProvider>
   );
 }
 
 export default App;
+
+
+<ThemeProvider theme={theme}>...</ThemeProvider>
