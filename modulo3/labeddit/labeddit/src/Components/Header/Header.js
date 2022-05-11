@@ -11,8 +11,8 @@ function Header() {
     const history = useHistory()
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
-                <Toolbar>
+            <AppBar color="secondary" position="static">
+                <Toolbar >
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                     <Button onClick={()=> goToFeed(history)} color="inherit">Labeddit</Button>
                     </Typography>

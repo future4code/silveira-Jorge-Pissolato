@@ -29,7 +29,9 @@ width: 80vw;
 max-width: 450px;
 `
 
-export const LogoImagem = styled.div`
+export const LogoImagem = styled.img`
 width: 70vw;
-max-width: 350px;
+max-width: 250px;
+padding-top: 25px;
+padding-bottom: 30px;
 `

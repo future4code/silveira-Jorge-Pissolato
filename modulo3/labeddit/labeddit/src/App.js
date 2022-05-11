@@ -15,4 +15,3 @@ function App() {
 export default App;
 
 
-<ThemeProvider theme={theme}>...</ThemeProvider>
