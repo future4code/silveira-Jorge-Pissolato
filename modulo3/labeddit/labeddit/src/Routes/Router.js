@@ -7,16 +7,16 @@ import PaginaPost from "../Paginas/PaginaPost/PaginaPost"
 import PaginaErro from "../Paginas/PaginaErro/PaginaErro"
 import Header from "../Components/Header/Header";
 
-function Router() {
+function Router({botaoDaDireita, setBotaoDaDireita}) {
     return (
-        <BrowserRouter>
-            <Header />
+        
+            
             <Switch>
                 <Route exact path={"/login"}>
-                    <PaginaLogin />
+                    <PaginaLogin botaoDaDireita={botaoDaDireita} setBotaoDaDireita={setBotaoDaDireita}/>
                 </Route>
                 <Route exact path={"/cadastro"}>
-                    <PaginaCadastro />
+                    <PaginaCadastro botaoDaDireita={botaoDaDireita} setBotaoDaDireita={setBotaoDaDireita}/>
                 </Route>
                 <Route exact path={"/"}>
                     <PaginaFeed />
@@ -24,11 +24,11 @@ function Router() {
                 <Route exact path={"/post/:id"}>
                     <PaginaPost />
                 </Route>
-                <Route>
+                <Route exact path={"*"}>
                     <PaginaErro />
                 </Route>
             </Switch>
-        </BrowserRouter>
+      
     )
 }
 

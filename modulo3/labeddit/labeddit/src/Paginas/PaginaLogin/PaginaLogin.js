@@ -1,41 +1,32 @@
 import React from "react";
-import { ContainerTela, InputsContainer, LogoImagem } from "./Styled";
+import { BotaoCadastro, ContainerTela, FormularioLogin, InputsContainer, LogoImagem } from "./Styled";
 import logo from "../../Assets/logo2.png"
-import { Button, TextField } from "@material-ui/core";
-import useForm from "../../Hooks/UseForm";
-import Header from "../../Components/Header/Header";
+import { Button } from "@material-ui/core";
+import LoginForm from "./LoginForm";
+import { goToCadastro } from "../../Routes/Coordinator"
+import { useHistory } from "react-router-dom";
+import {useUnProtectedPage} from "../../Hooks/useUnProtectedPage";
 
-function PaginaLogin() {
+function PaginaLogin({botaoDaDireita, setBotaoDaDireita}) {
+    useUnProtectedPage()
 
-    const [form, onChange, cleanFields] = useForm({ email: "", password: "" })
-
-    const envioFormulario = () => {
-
-    }
+    const history = useHistory()
 
     return (
         <ContainerTela>
             <LogoImagem src={logo} />
-            <InputsContainer>
-                <form onSubmit={envioFormulario}>
-                    <TextField
-                        name={"email"}
-                        value={form.email}
-                        onChange={onChange}
-                        label={"E-mail"}
-                    />
-                    <TextField
-                        name={"password"}
-                        value={form.password}
-                        onChange={onChange}
-                        label={"Senha"}
-                    />
-                </form>
-                <p>
-                <Button color="primary" variant="contained">Fazer Login</Button>
-                <Button color="primary" variant="contained">Crie uma conta aqui</Button>
-                </p>
-            </InputsContainer>
+            <LoginForm botaoDaDireita={botaoDaDireita} setBotaoDaDireita={setBotaoDaDireita}/>
+            <BotaoCadastro>
+                <Button
+                    onClick={() => goToCadastro(history)}
+                    color="primary"
+                    variant={"text"}
+                    fullWidth
+                    margin={"normal"}
+                >
+                    Criar Conta
+                </Button>
+            </BotaoCadastro>
         </ContainerTela>
     )
 }

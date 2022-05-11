@@ -1,8 +1,14 @@
 import React from "react";
-
+import { useUnProtectedPage } from "../../Hooks/useUnProtectedPage";
+import { ContainerPaginaDeErro } from "./Styled";
+import erro from "../../Assets/erro.png"
 function PaginaErro(){
+    useUnProtectedPage()
+    
     return(
-        <div>Ocorreu um erro!</div>
+        <ContainerPaginaDeErro src={erro}>
+            Ocorreu um erro!
+        </ContainerPaginaDeErro>
     )
 }
 
