@@ -3,19 +3,45 @@ import { Button } from '@material-ui/core';
 import { corPrimaria } from "../../Constants/Cores";
 import useProtectedPage from "../../Hooks/UseProtectedPage";
 import CardPost from "../../Components/CardPost.js/CardPost";
+import { BASE_URL } from "../../Constants/Url"
+import useRequestData from "../../Hooks/UseRequestData";
+import { BotaoPost, PostContainer } from "../../Components/CardPost.js/Styled";
+import { goToPost } from "../../Routes/Coordinator";
+import { Add } from "@material-ui/icons";
+import { useHistory } from "react-router-dom";
 
 
-function PaginaFeed(){
+
+function PaginaFeed() {
+
+    const history = useHistory()
+    const posts = useRequestData([], `${BASE_URL}/posts`)
+    console.log(posts)
     useProtectedPage()
-    return(
-        <div>
-            <h2>Feed</h2>
+
+    const irParaPost = (id) =>{
+        goToPost(history, id)
+    }
+
+    const postCard = posts.map((post) => {
+        return (
             <CardPost
-            title={"post"}
-            image={""}
-            onClick={()=> null}
+                key={post.id}
+                title={post.title}
+                onClick={irParaPost}
             />
-        </div>
+        )
+    })
+    return (
+        <PostContainer>
+            {postCard}
+            <BotaoPost
+                color={"primary"}
+                onClick={() => goToPost(history)}
+            >
+                <Add />
+            </BotaoPost>
+        </PostContainer>
     )
 }
 

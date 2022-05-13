@@ -1,20 +1,17 @@
 import styled from "styled-components"
+import { Fab } from "@material-ui/core"
 
-
-// export const PostContainer = styled.div`
-// display: flex;
-// flex-direction: column;
-// width: 20vw;
-// align-items: center;
-// margin-bottom: 20px;
-// `
 
 export const PostContainer = styled.div`
 display: flex;
-flex-direction: column;
-align-items: center;
-width: 80vw;
-max-width: 250px;
-margin-bottom: 0px;
-padding-top: 10px
+flex-direction: row;
+flex-wrap: wrap;
+margin: 30px;
+`
+
+export const BotaoPost = styled(Fab)`
+position: fixed !important;
+right: 20px;
+bottom: 20px;
+z-index: 3;
 `

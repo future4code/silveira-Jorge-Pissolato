@@ -4,7 +4,7 @@ import useProtectedPage from "../../Hooks/UseProtectedPage";
 function PaginaPost(){
     useProtectedPage()
     return(
-        <div>Página de Post</div>
+        <div>Adicionar Post</div>
     )
 }
 
