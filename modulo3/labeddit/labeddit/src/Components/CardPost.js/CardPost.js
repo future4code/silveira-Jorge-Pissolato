@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { PostContainer } from './Styled';
 
+
 const bull = (
     <Box
         component="span"
@@ -38,9 +39,8 @@ export default function BasicCard(props) {
                 </CardContent>
                 <CardActions>
                     <Button color='primary' size="small">Comentar</Button>
-                </CardActions>
-                <CardActions>
-                    <Button color='primary' size="small"></Button>
+                    <Button color='primary' size="small">curtir</Button>
+                    <Button color='primary' size="small">Descurtir</Button>
                 </CardActions>
             </Card>
         </PostContainer>

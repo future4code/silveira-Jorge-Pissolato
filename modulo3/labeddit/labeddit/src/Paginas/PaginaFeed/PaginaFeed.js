@@ -28,7 +28,7 @@ function PaginaFeed() {
             <CardPost
                 key={post.id}
                 title={post.title}
-                onClick={irParaPost}
+                onClick={()=> null}
             />
         )
     })
