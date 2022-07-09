@@ -21,7 +21,7 @@ export default class UserController{
             const token = await this.userBusiness.signup(input)
             res.status(201).send({message: "usuário cadastrado com sucesso !", token})
         } catch (error) {
-            
+           res.status(404).send({message: "erro ao cadastrar usuário no banco"})
         }
     }
 }

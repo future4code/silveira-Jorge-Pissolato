@@ -15,4 +15,4 @@ const userController = new UserController(
    )
 )
 
-app.post("/user/signup")
+app.post("/user/signup", userController.signup)
