@@ -1,7 +1,19 @@
+import UserData from "../data/UserData";
 import User from "../model/User";
+import { Authenticator } from "../services/Authenticator";
+import { HashManager } from "../services/HashManager";
+import { IdGenerator } from "../services/IdGenerator";
 import { SignupInputDTO } from "../types/signupInputDTO";
 
 export default class UserBusiness{
+
+    constructor(
+        private userData: UserData,
+        private idGenerator: IdGenerator,
+        private hashManager: HashManager,
+        private authenticator: Authenticator
+    ){}
+
     signup = async (input: SignupInputDTO)=>{
         const {name, email, password} = input
         if(!name || !email || !password){
@@ -13,9 +25,9 @@ export default class UserBusiness{
             throw new Error("esse e-mail já foi cadastrado")
         }
 
-        const id = idGenerator.generateId()
+        const id = this.idGenerator.generateId()
 
-        const hashedPassword = await hashManager.hash(password)
+        const hashedPassword = await  this.hashManager.hash(password)
 
         const user = new User(
             id,
@@ -24,8 +36,8 @@ export default class UserBusiness{
             hashedPassword
 
         )
-        await userData.insert(user)
+        await  this.userData.insert(user)
 
-        const token = authenticator.generateToken({id}) 
+        const token =  this.authenticator.generateToken({id}) 
     }
 }
