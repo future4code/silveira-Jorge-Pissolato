@@ -1,7 +1,7 @@
 import React from "react";
 import theme from "./constants/theme";
 import { ThemeProvider } from '@material-ui/core/styles'
-import { Router } from "./src/routes/Router";
+import { Router } from "./routes/Router";
 import GlobalState from "./global/GlobalState";
 
 
@@ -18,6 +18,3 @@ const App = () => {
 }
 
 export default App;
-
-
-// token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9

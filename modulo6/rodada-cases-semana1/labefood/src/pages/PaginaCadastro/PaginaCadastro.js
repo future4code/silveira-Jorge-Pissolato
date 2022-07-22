@@ -4,7 +4,7 @@ import LogoVermelha from '../.././assets/logo-vermelha.png';
 import Backward from '../../assets/back.png';
 import { App, Hr, Back, Logo, DivLogo, DivForm, Button } from './styled';
 import { useNavigate } from 'react-router-dom';
-import useForm from '../../../hooks/useForm';
+import useForm from '../../hooks/useForm';
 import { signup } from '../../services/users';
 
 const PaginaCadastro = () => {
@@ -62,6 +62,7 @@ const PaginaCadastro = () => {
             margin='dense'
             type="email"
             fullWidth
+            type="email"
             InputLabelProps={{ shrink: true }}
             required
             variant="outlined"

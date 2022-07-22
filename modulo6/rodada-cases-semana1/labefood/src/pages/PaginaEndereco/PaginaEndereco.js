@@ -3,7 +3,7 @@ import TextField from '@material-ui/core/TextField';
 import Backward from '../../assets/back.png';
 import { App, Hr, Back, DivLogo, DivForm, Button } from './styled';
 import { useNavigate } from 'react-router-dom';
-import useForm from '../../../hooks/useForm';
+import useForm from '../../hooks/useForm';
 import { addres } from '../../services/users';
 import {useProtectPage} from '../../routes/coordinator';
 
