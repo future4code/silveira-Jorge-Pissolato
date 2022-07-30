@@ -22,7 +22,7 @@ export const Router = () => {
                 <Route path="/home" element={<PaginaHome />} />
                 <Route path="/carrinho" element={<PaginaCarrinho />} />
                 <Route path="/perfil" element={<PaginaPerfil />} />
-                <Route path="/perfil/:id" element={<EditarPerfil />} />
+                <Route path="/editar-perfil" element={<EditarPerfil />} />
                 <Route path="/detalhes/:id" element={<PaginaDetalhes />} />
 
 

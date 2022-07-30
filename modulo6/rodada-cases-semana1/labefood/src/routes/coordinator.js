@@ -25,7 +25,7 @@ export const irParaDetalhes = (navigate,id) =>{
 
 }
 export const irParaEditarPerfil = (navigate,id) =>{
-    navigate(`/perfil/${id}`)
+    navigate(`/editar-perfil`)
 
 }
 export const useProtectPage = () => {

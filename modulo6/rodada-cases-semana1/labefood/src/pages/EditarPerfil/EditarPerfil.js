@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import TextField from '@material-ui/core/TextField';
 import LogoVermelha from '../.././assets/logo-vermelha.png';
 import Backward from '../../assets/back.png';
@@ -8,14 +8,41 @@ import useForm from '../../hooks/useForm';
 import { signup } from '../../services/users';
 import { goBack } from "../../routes/coordinator";
 import { BASE_URL } from "../../constants/urls";
-import  useRequestData from "../../hooks/useRequestData"
+import useRequestData from "../../hooks/useRequestData"
+import axios from "axios";
 
 const EditarPerfil = () => {
-    
+
     const perfil = useRequestData({}, `${BASE_URL}/profile`)
 
-    console.log(perfil[0].user.name)
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [cpf, setCpf] = useState('')
+
+    // setName(perfil[0].user && perfil[0].user.name)
+    // setEmail(perfil[0].user && perfil[0].user.email)
+    // setCpf(perfil[0].user && perfil[0].user.cpf)
+
+    const getPerfil = async()=>{
+        await axios.get(`${BASE_URL}/profile`, {
+            headers:{
+                auth: window.localStorage.getItem('token')
+            }
+        })
+        .then((res)=>{
+            setName(res.data.user.name)
+            setEmail(res.data.user.email)
+            setCpf(res.data.user.cpf)
+        }).catch((err)=>{
+            console.log(err.response)
+        })
+    }
+
     
+    useEffect(()=>{
+        getPerfil()
+    },[])
+
     const [form, onChange, clear] = useForm({ name: "", email: "", cpf: "" })
     const navigate = useNavigate();
 
@@ -37,43 +64,43 @@ const EditarPerfil = () => {
                 <form onSubmit={onSubmitForm}>
                     <TextField
                         name={"name"}
-                        value={perfil[0].user.name}
-                        onChange={onChange}
+                        value={name}
+                        onChange={(e)=>setName(e.target.value)}
                         id="outlined-basic"
-                        label="Nome"
+                        // label="Nome"
                         margin='dense'
                         fullWidth
                         InputLabelProps={{ shrink: true }}
                         required
                         variant="outlined"
-                        placeholder='Nome e sobrenome'
+                    // placeholder='Nome e sobrenome'
                     />
                     <TextField
                         name={"email"}
-                        value={form.email}
-                        onChange={onChange}
+                        value={email}
+                        onChange={(e)=>setEmail(e.target.value)}
                         id="outlined-basic"
-                        label="E-mail"
+                        // label="E-mail"
                         margin='dense'
                         type="email"
                         fullWidth
                         InputLabelProps={{ shrink: true }}
                         required
                         variant="outlined"
-                        placeholder='email@email.com'
+                    // placeholder='email@email.com'
                     />
                     <TextField
                         name={"cpf"}
-                        value={form.cpf}
-                        onChange={onChange}
+                        value={cpf}
+                        onChange={(e)=>setCpf(e.target.value)}
                         id="outlined-basic"
-                        label="CPF"
+                        // label="CPF"
                         margin='dense'
                         fullWidth
                         InputLabelProps={{ shrink: true }}
                         required
                         variant="outlined"
-                        placeholder='000.000.000-00'
+                    // placeholder='000.000.000-00'
                     />
 
                     <Button><strong>Atualizar dados</strong></Button>
