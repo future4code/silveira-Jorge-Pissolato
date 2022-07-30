@@ -105,6 +105,7 @@ const PaginaCarrinho = () => {
       </PagamentosContainer>
       <StyledButton color='primary' variant="contained" onClick={gerarPedido} >Gerar Pedido</StyledButton>
       <Footer />
+      
 
     </CarrinhoContainer>
   )

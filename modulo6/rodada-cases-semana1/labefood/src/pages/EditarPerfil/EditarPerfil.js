@@ -38,6 +38,24 @@ const EditarPerfil = () => {
         })
     }
 
+    const atualizarPerfil = async() => {
+        const body = {
+            name,
+            email,
+            cpf
+        }
+        await axios.put(`${BASE_URL}/profile`,body, {
+            headers: {
+                auth: window. localStorage.getItem('token')
+            }
+        })
+        .then((res)=>{
+            console.log(res.data)
+        }).catch((err)=>{
+            console.log(err.response)
+        })
+    }
+
     
     useEffect(()=>{
         getPerfil()
@@ -49,6 +67,7 @@ const EditarPerfil = () => {
     const onSubmitForm = (event) => {
         event.preventDefault();
         signup(form, clear, navigate)
+        atualizarPerfil()
     }
 
 
@@ -71,7 +90,7 @@ const EditarPerfil = () => {
                         margin='dense'
                         fullWidth
                         InputLabelProps={{ shrink: true }}
-                        required
+                        // required
                         variant="outlined"
                     // placeholder='Nome e sobrenome'
                     />
@@ -85,7 +104,7 @@ const EditarPerfil = () => {
                         type="email"
                         fullWidth
                         InputLabelProps={{ shrink: true }}
-                        required
+                        // required
                         variant="outlined"
                     // placeholder='email@email.com'
                     />
@@ -98,7 +117,7 @@ const EditarPerfil = () => {
                         margin='dense'
                         fullWidth
                         InputLabelProps={{ shrink: true }}
-                        required
+                        // required
                         variant="outlined"
                     // placeholder='000.000.000-00'
                     />

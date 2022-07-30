@@ -1,7 +1,10 @@
 
 LABEFOOD 
 
-O que funciona
+Esta é uma aplicação mobile Ecommerce de restaurantes, onde o usuário pode escolher seus pratos favoritos e se deliciar com uma variedade de opções!
+
+Nessa aplicação:
+
   - O usuário é capaz de criar uma conta, cadastrando seus dados pessoais e seu endereço
   - Caso insira alguma informação incorreta ou deixe de inserir alguma informação obrigatória, o usuário recebe uma mensagem de erro clara  
   - Após finalizar o cadastro, o usuário é redirecionado para a tela de lista de restaurantes
@@ -20,11 +23,9 @@ O que funciona
   - O usuario consegue realizar um pedido
   - O usuário consegue visualizar seus dados pessoais e endereço
   - O usuário consegue capaz de visualizar o seu histórico de pedidos concluídos
-
-O que não funciona
   - O usuário não consegue editar seus dados pessoais e endereço
-  -  Ao tentar editar informações usuario é redirecionado para pagina home.
-  - Usuario não consegue ver o  banner de "Pedido em Andamento" com os dados do pedido.
+
+
 
 
 
