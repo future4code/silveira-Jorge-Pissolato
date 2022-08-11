@@ -1,4 +1,4 @@
-import * as bcrypt from 'bcryptjs';
+import * as bcrypt from 'bcrypt';
 
 export class HashManager{
   hash = async (plainText: string): Promise<string> => {
@@ -11,3 +11,4 @@ export class HashManager{
     return bcrypt.compare(plainText, cypherText)
   }
 }
+
