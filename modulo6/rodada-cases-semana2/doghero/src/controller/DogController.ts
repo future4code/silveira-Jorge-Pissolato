@@ -3,10 +3,7 @@ import DogBusiness from "../business/DogBusiness";
 import { CriarPasseioDTO } from "../types/criarPasseioDTO";
 
 export default class DogController {
-    static criarPasseio(arg0: string, criarPasseio: any) {
-        throw new Error("Method not implemented.");
-    }
-
+    
     constructor(
         public dogBusiness: DogBusiness
     ) { }
@@ -29,7 +26,10 @@ export default class DogController {
             const token = await this.dogBusiness.criarPasseio(input)
             res.status(201).send({message: "passeio criado com sucesso!", token})
         } catch (error) {
-            throw new Error(" Não foi possivel criar o passeio")
+            if (error instanceof Error) {
+                return res.status(400).send(error.message)
+            }
+            res.status(500).send("Erro no signup")
         }
     }
 }

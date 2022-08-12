@@ -19,7 +19,7 @@ export default class DogBusiness {
             throw new Error("campos inválidos")
         }
         //conferir se o passeio existe 
-        const passeioRegistrado = await this.dogData.encontrarPorStatus(status || data)
+        const passeioRegistrado = await this.dogData.encontrarPorStatus(status)
         if (passeioRegistrado) {
             throw new Error("Esse passeio já está sendo executado")
         }

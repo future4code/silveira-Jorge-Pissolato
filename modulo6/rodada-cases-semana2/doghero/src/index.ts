@@ -16,4 +16,4 @@ const dogController = new DogController(
     dogBusiness
 )
 
-app.post("/dog_waking", DogController.criarPasseio)
+app.post("/dog_waking", dogController.criarPasseio)
