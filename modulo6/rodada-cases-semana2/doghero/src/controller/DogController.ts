@@ -1,11 +1,12 @@
 import { Request, Response } from "express";
 import DogBusiness from "../business/DogBusiness";
-import { CriarPasseioDTO } from "../types/criarPasseioDTO";
+import { IdGenerator } from "../services/IdGenerator";
+import { CriarPasseioDTO, PegarPasseioDTO } from "../types/criarPasseioDTO";
 
 export default class DogController {
     
     constructor(
-        public dogBusiness: DogBusiness
+        private dogBusiness: DogBusiness
     ) { }
 
     criarPasseio = async (req: Request, res: Response) => {
@@ -30,6 +31,23 @@ export default class DogController {
                 return res.status(400).send(error.message)
             }
             res.status(500).send("Erro no signup")
+        }
+    }
+
+     pegarPasseio = async (req: Request, res: Response)=> {
+        try {
+            const { id } = req.params
+            const passeio = await this.dogBusiness.pegarPasseio(id)
+            res.status(200).send({ passeio })
+            
+        } catch (error) {
+
+            if (error instanceof Error) {
+                res.send({ message: error.message })
+            } else {
+                throw new Error("Erro do banco!")
+            }
+            
         }
     }
 }

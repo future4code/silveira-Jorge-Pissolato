@@ -17,3 +17,4 @@ const dogController = new DogController(
 )
 
 app.post("/dog_waking", dogController.criarPasseio)
+app.get("/dog_walking/:id", dogController.pegarPasseio)

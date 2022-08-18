@@ -19,12 +19,26 @@ export default class DogData extends BaseDatabase {
         }
     }
 
-    encontrarPorStatus = async (status: string) => {
+    select = async (id: string) => {
+        try {
+           const resultado = await this.connection(this.TABLE_NAME).select("*").where({id})
+           return resultado
+        } catch (error) {
+            if (error instanceof Error) {
+                throw new Error(error.message)
+            } else {
+                throw new Error("Erro do banco !")
+            }
+        }
+    }
+
+    encontrarPasseio = async (data: string, inicio: string) => {
         try {
             const queryResultado: EncontrarPorStatusResponse = await this
                 .connection(this.TABLE_NAME)
                 // .select()
-                .where({ status })
+                .where({ data })
+                .andWhere({inicio})
             return queryResultado[0]
         } catch (error) {
             if (error instanceof Error) {
