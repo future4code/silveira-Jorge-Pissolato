@@ -8,8 +8,12 @@ export default class PokemonData extends BaseDatabase {
 
     select = async (Type1: string, Type2: string) => {
         try {
-            const result = await this.connection(this.TABLE_NAME).select("*").where({ Type1, Type2 })
+
+            const result = await this
+                .connection(this.TABLE_NAME)
+                .select('Type1', 'Type2', 'Name')
             return (result)
+
         } catch (error) {
             if (error instanceof Error) {
                 throw new Error(error.message)
@@ -19,22 +23,22 @@ export default class PokemonData extends BaseDatabase {
         }
     }
 
-    seachPasseio = async (Type1: string, Type2: string) => {
-        try {
-            const seachResult: SeachForTypeResult = await this
-                .connection(this.TABLE_NAME)
-                .where({ Type1 })
-                .andWhere({ Type2 })
-            return seachResult[0]
-        } catch (error) {
-            if (error instanceof Error) {
-                if (error instanceof Error) {
-                    throw new Error(error.message)
-                } else {
-                    throw new Error("Erro do banco !")
-                }
-            }
-        }
-    }
+    // pokeSeach = async (Type1: string, Type2: string) => {
+    //     try {
+    //         const seachResult: SeachForTypeResult = await this
+    //             .connection(this.TABLE_NAME)
+    //             .where({ Type1 })
+    //             .andWhere({ Type2 })
+    //         return seachResult[0]
+    //     } catch (error) {
+    //         if (error instanceof Error) {
+    //             if (error instanceof Error) {
+    //                 throw new Error(error.message)
+    //             } else {
+    //                 throw new Error("Erro do banco !")
+    //             }
+    //         }
+    //     }
+    // }
 }
 

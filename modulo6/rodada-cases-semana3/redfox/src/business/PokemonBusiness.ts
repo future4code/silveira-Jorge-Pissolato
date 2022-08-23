@@ -12,22 +12,17 @@ export default class PokemonBusiness {
         public authenticator: Authenticator
     ){}
 
-    pokemonsForType = async (Type1: string, Type2: string)=>{
+    pokemonsForType = async (Type1: string, Type2: string)=> {
         try {
-            if(!Type1  || !Type2 ){
-                throw new Error("insira pelo menos um tipo para o pokemon!")
-
-            }
             const pokeTypes = await this.pokemonData.select(Type1, Type2)
             if(pokeTypes){
                 return(pokeTypes)
             }
-            const pokeTypeOne = await this.pokemonData.select(Type1, Type2)
             if(Type1 && !Type2){
-                return(pokeTypeOne) 
+                return(pokeTypes) 
             }
         }catch(error){
-
+            throw new Error("Erro no banco business.")
         }
     }
 }
