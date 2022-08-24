@@ -22,6 +22,22 @@ export default class PokemonData extends BaseDatabase {
             }
         }
     }
+    selectName = async (Name: string) => {
+        try {
+
+            const result = await this
+                .connection(this.TABLE_NAME)
+                .select('Name')
+            return (result)
+
+        } catch (error) {
+            if (error instanceof Error) {
+                throw new Error(error.message)
+            } else {
+                throw new Error("Erro do banco !")
+            }
+        }
+    }
 
     // pokeSeach = async (Type1: string, Type2: string) => {
     //     try {

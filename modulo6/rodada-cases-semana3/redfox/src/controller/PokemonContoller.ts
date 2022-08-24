@@ -22,5 +22,19 @@ export default class PokemonController {
         }
 
     }
+    pokemonsForName = async (req: Request, res: Response)=>{
+        try {
+            const {Name} = req.params
+            const names = await this.pokemonBusiness.pokemonsForName(Name)
+            res.status(200).send({names})
+        } catch (error) {
+            if (error instanceof Error) {
+                res.send({ message: error.message })
+            } else {
+                throw new Error("Erro do banco!")
+            }
+        }
+
+    }
 
 }

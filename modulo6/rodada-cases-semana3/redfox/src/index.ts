@@ -18,3 +18,4 @@ import { IdGenerator } from "./services/IdGenerator";
     )
 
     app.get("/pokemonGo-types", pokemonController.pokemonsForType)
+    app.get("/pokemonGo-name", pokemonController.pokemonsForName)

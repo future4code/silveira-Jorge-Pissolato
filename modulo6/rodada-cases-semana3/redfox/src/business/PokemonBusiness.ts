@@ -25,4 +25,17 @@ export default class PokemonBusiness {
             throw new Error("Erro no banco business.")
         }
     }
+    pokemonsForName = async (Name: string) => {
+        try {
+            const pokeNames = await this.pokemonData.selectName(Name)
+            if (pokeNames) {
+                return (pokeNames)
+            }
+            if (!pokeNames) {
+                throw new Error("Esse nome não existe")
+            }
+        } catch (error) {
+            throw new Error("Erro no banco business.")
+        }
+    }
 }
