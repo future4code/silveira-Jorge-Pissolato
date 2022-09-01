@@ -1,11 +1,12 @@
 import React from "react";
-import SelectBox from "../../components/SelectBox";
+import SelectBox from "../../components/SelectBox/SelectBox";
+
 
 const QuinaPage = ()=>{
     return(
         <div>
-            QuinaPage
             <SelectBox/>
+            QuinaPage
         </div>
     )
 }

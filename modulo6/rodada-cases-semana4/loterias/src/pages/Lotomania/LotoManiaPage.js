@@ -1,5 +1,7 @@
 import React from "react";
-import SelectBox from "../../components/SelectBox";
+import SelectBox from "../../components/SelectBox/SelectBox";
+
+
 
 const LotoManiaPage = ()=>{
     return(

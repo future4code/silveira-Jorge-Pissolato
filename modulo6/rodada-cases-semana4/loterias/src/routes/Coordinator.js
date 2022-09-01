@@ -1,8 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 
-
-export const goMegaSenaPage = (navigate) => {
+export const goHomePage = (navigate) => {
     navigate("/")
+}
+export const goMegaSenaPage = (navigate) => {
+    navigate("/megasena")
 }
 export const goQuinaPage = (navigate) => {
     navigate("/quina")
