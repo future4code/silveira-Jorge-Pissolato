@@ -2,8 +2,8 @@ import React from "react"
 import SelectBox from "../../components/SelectBox/SelectBox"
 import { BASE_URL } from "../../constants/url"
 import useRequestData from "../../hooks/useRequestData"
-import { BoxGreen, Concurso, ConcursoStile, Data, LogoSena, MegaPage, SelectBoxStile, Sorteio } from "./styled"
-import Sidebar from "../../assets/Sidebar.jpg"
+import { BoxGreen, Concurso, ConcursoStile, Data, LogoSena, MegaPage, SelectBoxStile, Sorteio, PaginaSena } from "./styled"
+
 
 
 
@@ -20,9 +20,7 @@ const MegaSenaPage = () => {
     })
     console.log(megaSena)
     return (
-        <div>
-
-
+        <PaginaSena>
             <BoxGreen >
                 <LogoSena>
                     <h2>MEGA-SENA</h2>
@@ -31,7 +29,7 @@ const MegaSenaPage = () => {
                     <SelectBox />
                 </SelectBoxStile>
                 <Concurso>
-                    <p>{concursos[0].id}</p>
+                    <p>Concurso: {concursos[0].id}</p>
                     <Data>
                         {concursos[0].data}
                     </Data>
@@ -42,7 +40,7 @@ const MegaSenaPage = () => {
                     {concursos[0].numeros}
                 </Sorteio>
             </ConcursoStile>
-        </div>
+        </PaginaSena>
     )
 
 }

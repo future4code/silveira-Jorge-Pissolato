@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+export const PaginaSena = styled.div`
+top: 0%;
+bottom: 0%;
+left: 0%;
+right: 0%;
+position: absolute;
+background-color: #FFFFFF ;
+
+`
 
 export const BoxGreen = styled.div`
 position: absolute;
@@ -7,7 +16,7 @@ left: 0%;
 right: 61.69%;
 top: 0%;
 bottom: 0%;
-
+display: flex;
 background: #6BEFA3;
 `
 // export const LogoSena = styled.img`
@@ -21,9 +30,9 @@ export const Concurso = styled.div`
 position: absolute;
 left: 6%;
 right: 84.83%;
-top: 86.76%;
+top: 80.76%;
 bottom: 11.84%;
-
+width: 300px;
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 500;
@@ -81,6 +90,7 @@ left: 11.11%;
 right: 73.57%;
 top: 48.43%;
 bottom: 48.52%;
+width: 500px;
 
 font-family: 'Montserrat';
 font-style: normal;
@@ -93,10 +103,11 @@ color: #FFFFFF;
 
 export const Sorteio = styled.div`
 position: absolute;
-left: 67.39%;
-right: 25.66%;
-top: 45.18%;
-bottom: 44.97%;
+left: 60vw;
+right: 15.66%;
+/* top: 0vw; */
+bottom: 20vw;
+color: black;
 `
 
 
